@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+    font-family: "Play", sans-serif;
+
+}
+.paddding{
+  img {margin-right: 20px;}
+}
+header {
+  background-color: rgb(20,18,68);
+
+  img {
+    @media screen and (max-width: 767px) { width: 45%;}
+  }
+
+  
+  
+}
+
+body{
+  background-color: rgb(20,18,68);
+}
+
+.acolor {         @media screen and (max-width: 767px) { display: none !important;}
+                  @media screen and (min-width: 768px) and (max-width: 991px) { display: none !important;}
+
+
+  a {
+    color: rgb(237,237,241) !important;
+    font-weight: 400 !important;
+  }
+}
+
+
+.logo {
+    @media screen and (max-width: 767px) { display: none !important;}
+                      @media screen and (min-width: 768px) and (max-width: 991px) { display: none !important;}
+
+
+}
+
+.global {
+  padding-top: 5%;
+  padding-bottom: 2%;
+}
