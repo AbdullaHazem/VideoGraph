@@ -1,4 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+  --animation-interval: 5s;      /* Time between animation starts (now includes animation duration) */
+  --disappear-duration: 0.1s;    /* How long elements stay invisible */
+  --move-up-duration: 0.5s;      /* Duration of upward movement */
+  --total-animation-duration: calc(var(--disappear-duration) + var(--move-up-duration));
+  --move-up-distance: 30px;      /* How far elements move up */
+  --stagger-delay: 0.08s;         /* Delay between element animations */
+}
+
+
+
+
+
 
 * {
   margin: 0;
@@ -48,4 +63,139 @@ body{
 .global {
   padding-top: 5%;
   padding-bottom: 2%;
+}
+
+.hero {
+  background-image: url(./hero-1.jpg) ;
+  background-repeat: no-repeat;
+    height: 100vh !important;
+
+background-position-x:50% ; 
+background-position-y:200% ; 
+@media screen and (max-width: 767px){background-position-y:100% ; 
+
+
+}
+
+ .container {
+   h2 {
+  font-size: 60px !important;
+  font-weight: 700;
+  @media screen and (max-width: 767px) {font-size: 40px !important;}
+ }
+ span {
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  font-family: "Josefin Sans", sans-serif;
+  line-height: 24px !important;
+  @media screen and (max-width: 767px) {font-size: 15px !important;}
+
+
+
+ }
+ .custom-button {
+  position: relative;
+  width: 300px;
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 30px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Corners: top-left & bottom-right lines */
+.custom-button::before,
+.custom-button::after,
+.custom-button span::before,
+.custom-button span::after {
+  content: '';
+  position: absolute;
+  background-color: #00bfff;
+  transition: all 0.4s ease;
+}
+
+/* Horizontal lines */
+.custom-button::before {
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 2px;
+}
+.custom-button::after {
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 2px;
+}
+
+/* Vertical lines */
+.custom-button span::before {
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 20px;
+}
+.custom-button span::after {
+  bottom: 0;
+  right: 0;
+  width: 2px;
+  height: 20px;
+}
+
+/* Hover effect - expand lines only around button */
+.custom-button:hover::before,
+.custom-button:hover::after {
+  width: 100%;
+}
+.custom-button:hover span::before,
+.custom-button:hover span::after {
+  height: 100%;
+}
+
+ }
+}
+
+
+
+
+@keyframes popUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  2% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  4% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  6% {
+    opacity: 1;
+    transform: translateY(calc(-1 * var(--move-up-distance)));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(calc(-1 * var(--move-up-distance)));
+  }
+}
+
+.h22 {
+  animation: popUp var(--animation-interval) linear infinite;
+  animation-delay: var(--animation-interval);
+}
+
+.span1 {
+  animation: popUp var(--animation-interval) linear infinite;
+  animation-delay: calc(var(--animation-interval) + var(--stagger-delay));
+}
+
+.custom-button {
+  animation: popUp var(--animation-interval) linear infinite;
+  animation-delay: calc(var(--animation-interval) + var(--stagger-delay) * 2);
 }
