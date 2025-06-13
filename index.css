@@ -72,16 +72,25 @@ body{
 
 background-position-x:50% ; 
 background-position-y:200% ; 
-@media screen and (max-width: 767px){background-position-y:100% ; 
+@media screen and (max-width: 767px){background-position-y:100% !important ; 
+  background-position-x:50% ; 
+
+  @media screen and (max-width: 767px) {
+border-bottom : 1px solid rgba(255, 255, 255, 0.404); 
+height: 65vh !important;
+  }
 
 
 }
 
  .container {
+  @media screen and (max-width: 767px){
+  }  
    h2 {
   font-size: 60px !important;
   font-weight: 700;
-  @media screen and (max-width: 767px) {font-size: 40px !important;}
+  @media screen and (max-width: 767px) {font-size: 30px !important;}
+  
  }
  span {
   font-size: 20px !important;
@@ -96,6 +105,8 @@ background-position-y:200% ;
  .custom-button {
   position: relative;
   width: 300px;
+   @media screen and (max-width: 767px){  width: 250px;
+}
   display: inline-block;
   color: #fff;
   font-weight: bold;
@@ -199,3 +210,6 @@ background-position-y:200% ;
   animation: popUp var(--animation-interval) linear infinite;
   animation-delay: calc(var(--animation-interval) + var(--stagger-delay) * 2);
 }
+
+
+
